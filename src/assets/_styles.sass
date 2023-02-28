@@ -1,0 +1,19 @@
+$accent-color: #D58C51
+$bg-color: #E5E5E5
+$dark-btn-font-color: #131313
+$dark-form-font-color: #161516
+$agreement-font-color: #301411
+
+@mixin  mix_button($bg-color: $accent-color, $color: $dark-btn-font-color, $border: 1px solid $accent-color)
+    background: $bg-color
+    width: 200px
+    height: 42px
+    border: $border
+    display: flex
+    justify-content: center
+    align-items: center
+    color: $color
+    font-style: normal
+    font-weight: 400
+    font-size: 14px
+    line-height: 17px
