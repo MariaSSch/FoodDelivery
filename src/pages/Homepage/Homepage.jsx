@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Button from '../../components/Button/Button';
 import Card from '../../components/Card/Card';
+import Cart from '../../components/Cart/Cart';
 
 import s from "./Homepage.module.sass";
 
@@ -12,11 +14,16 @@ export default function Homepage() {
         .then(res => res.json())
         .then(data => setMenu(data))
   }, [])
+
   return (
     <div className={s.homepage}>
       <div className={s.homepageHeader}>
         <h1>наша продукция</h1>
-        <Button>Выйти</Button>
+        <div>
+          <Cart />
+          <Button>Выйти</Button>
+          <Link to="/register">htibcnhfwbz</Link>
+        </div>
       </div>
       <div className={s.cardsContainer}>
       {

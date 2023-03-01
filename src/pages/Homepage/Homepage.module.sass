@@ -1,0 +1,24 @@
+@import "../../assets/styles"
+
+.homepage
+    padding: 54px 68px 67px 70px
+    background-color: $bg-color
+    .homepageHeader
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin-bottom: 75px
+        & > div
+            display: flex
+        h1
+            font-weight: 700
+            font-size: 31px
+            line-height: 38px
+            text-transform: uppercase
+            color: #fff
+    .cardsContainer
+        display: grid
+        grid-template-columns: repeat(auto-fill, 312px)
+        grid-template-rows: min-content
+        row-gap: 35px
+        column-gap: 18px

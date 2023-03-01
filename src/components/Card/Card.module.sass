@@ -1,0 +1,58 @@
+@import "../../assets/styles"
+
+.card
+    width: 312px
+    padding: 43px 21px 32px
+    border: 1px solid $accent-color
+    color: #fff
+    display: grid
+    grid-template-columns: auto
+    grid-template-rows: min-content
+    &:hover
+        color: $accent-color
+    .cardTitle
+        font-weight: 500
+        font-size: 17px
+        line-height: 21px
+        margin: 31px 0 1px
+    .cardDescr
+        font-weight: 400
+        font-size: 14px
+        line-height: 17px
+    .cardFooter
+        display: flex
+        align-items: baseline
+        justify-content: space-between
+        margin-top: 41px //-10 -5 -7
+        align-self: flex-end
+        &>div
+            display: flex
+            align-items: baseline
+            .cardPrice
+                font-weight: 500
+                font-size: 17px
+                line-height: 21px
+                margin-right: 4px
+            .cardOutput
+                font-weight: 400
+                font-size: 14px
+                line-height: 17px
+        .cardAddBtn
+            width: 30px
+            height: 30px
+            border-radius: 50%
+            background-color: transparent
+            border: 1px solid #fff
+            color: #fff
+            font-size: 22px
+            margin-right: 6px
+            display: flex
+            justify-content: center
+            align-items: center
+            cursor: pointer
+            &:hover 
+                background-color: $accent-color
+                border: none
+            // &:hover + div
+            //     color: $accent-color
+

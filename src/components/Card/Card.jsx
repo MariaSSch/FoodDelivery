@@ -1,14 +1,19 @@
 import React from 'react';
 import s from "./Card.module.sass";
 
-export default function Card({src, title, description, price, output}) {
+export default function Card({src, title, description, price, output, ...props}) {
   return (
-    <div>
+    <div className={s.card}>
         <img src={src} alt="foto"/>
-        <p className={s.title}>{title}</p>
-        <p className={s.descr}>{description}</p>
-        <p className={s.price}>{price}</p>
-        <p className={s.output}>{output}</p>
+        <p className={s.cardTitle}>{title}</p>
+        <p className={s.cardDescr}>{description}</p>
+        <div className={s.cardFooter}>
+          <div>
+            <p className={s.cardPrice}>{price} &#8381;</p>
+            <p className={s.cardOutput}>/ {output}</p>
+          </div>
+          <button className={s.cardAddBtn} {...props}>&#43;</button>
+        </div>
     </div>
   )
 }

@@ -1,7 +1,11 @@
-import React from 'react'
+import React from 'react';
+import Form from '../../components/Form/Form';
+import s from "./Register.module.sass";
 
-export default function RegisterPage() {
+export default function Registerpage() {
   return (
-    <div>RegisterPage</div>
+    <div className={s.register}>
+      <Form />
+    </div>
   )
 }
