@@ -5,7 +5,7 @@ import s from "./Register.module.sass";
 export default function Registerpage() {
   return (
     <div className={s.register}>
-      <Form />
+      <Form link={'/signin'} actionType="регистрация" actionToDo="Авторизоваться" action="Зарегистрироваться"/>
     </div>
   )
 }
