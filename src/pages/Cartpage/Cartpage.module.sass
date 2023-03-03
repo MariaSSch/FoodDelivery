@@ -1,0 +1,46 @@
+@import "../../assets/styles"
+
+.cartpage
+    background-color: $bg-color
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: space-between
+    width: 100%
+    padding: 53px 70px 27px
+    .cartpageHeader
+        display: flex
+        justify-content: space-between
+        align-items: center
+        width: 100%
+        margin-bottom: 38px
+        h1
+            position: relative
+            left: -143px
+    .cartpageContent
+        margin-bottom: 67px
+    .cartpageFooter
+        display: flex
+        justify-content: space-evenly
+        align-items: center
+        width: 100%
+        .cartpageTotal
+            display: flex
+            align-items: center
+            .cartpageTotalText
+                font-weight: 400
+                font-size: 21px
+                line-height: 26px
+                text-transform: uppercase
+                color: #FFFFFF
+                margin-right: 16px
+            .cartpageTotalPrice
+                font-weight: 400
+                font-size: 18px
+                line-height: 22px
+                color: $accent-color
+        button
+            @include mix_button($bg-color: $accent-color, $color: $dark-btn-font-color, $border: 1px solid $accent-color)
+            &:hover
+                background-color: transparent
+                color: $accent-color

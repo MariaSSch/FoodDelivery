@@ -1,7 +1,8 @@
 import React from 'react';
+import AddCancelBtn from '../AddCancelBtn/AddCancelBtn';
 import s from "./Card.module.sass";
 
-export default function Card({src, title, description, price, output, ...props}) {
+export default function Card({src, title, description, price, output}) {
   return (
     <div className={s.card}>
         <img src={src} alt="foto"/>
@@ -12,7 +13,7 @@ export default function Card({src, title, description, price, output, ...props})
             <p className={s.cardPrice}>{price} &#8381;</p>
             <p className={s.cardOutput}>/ {output}</p>
           </div>
-          <button className={s.cardAddBtn} {...props}>&#43;</button>
+          <AddCancelBtn />       
         </div>
     </div>
   )
