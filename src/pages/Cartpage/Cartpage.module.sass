@@ -24,6 +24,18 @@
         justify-content: space-evenly
         align-items: center
         width: 100%
+        padding-bottom: 27px
+        background-color: $bg-color
+        position: fixed
+        bottom: 0
+        &::before
+            content: ""
+            position: absolute
+            top: -20px
+            width: 100vw
+            height: 20px
+            background-color: $bg-color
+            border-top: 1px solid $accent-color
         .cartpageTotal
             display: flex
             align-items: center

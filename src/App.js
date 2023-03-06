@@ -4,6 +4,7 @@ import Registerpage from "./pages/Registerpage/Registerpage";
 import Signinpage from "./pages/Signinpage/Signinpage";
 import Cartpage from "./pages/Cartpage/Cartpage";
 import './App.sass';
+import SingleProdpage from "./pages/SingleProdpage/SingleProdpage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/register" element={<Registerpage/>}/>
           <Route path="/signin" element={<Signinpage/>}/>
           <Route path="/cart" element={<Cartpage/>}/>
+          <Route path="/:1" element={<SingleProdpage/>}/>
         </Routes>
       </div>
   );
