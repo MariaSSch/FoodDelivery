@@ -1,19 +1,18 @@
 import React from 'react';
-import AddCancelBtn from '../AddCancelBtn/AddCancelBtn';
+import CancelBtn from '../CancelBtn/CancelBtn';
 
 import s from "./Order.module.sass";
 
 export default function OrderItem({src, title, price}) {
   return (
-    <div className={s.cartOrderItem}>
-        <div className={s.cartProdData}>
-            <div className={s.cartImg} style={{backgroundImage: `url(${process.env.PUBLIC_URL + src})`}}></div>
-            {/* <img src={src} alt="foto" className={s.cartImg}/> */}
-            <p className={s.cardTitle}>{title}</p>
+    <div className={s.orderItem}>
+        <div className={s.orderData}>
+            <div className={s.orderImg} style={{backgroundImage: `url(${process.env.PUBLIC_URL + src})`}}></div>
+            <p className={s.orderTitle}>{title}</p>
         </div>
-        <div className={s.cartPriceData}>
-            <p className={s.cardPrice}>{price}  &#8381;</p>
-            <AddCancelBtn />
+        <div className={s.orderPriceData}>
+            <p className={s.orderPrice}>{price}  &#8381;</p>
+            <CancelBtn />
         </div>
     </div>
   )

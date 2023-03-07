@@ -11,7 +11,7 @@ export default function Cart() {
             <p>на сумму 3500 &#8381;</p>
         </div>
         <div className={s.cartSign}>
-            <Link to="/cart"><img src={cart} alt="cart" /></Link>
+            <Link to="/cart" ><img src={cart} alt="cart"/></Link>
         </div>
     </div>
   )

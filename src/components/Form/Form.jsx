@@ -7,7 +7,7 @@ import s from "./Form.module.sass";
 export default function Form({link, actionType, actionToDo, action}) {
   return (
     <div className={s.form}>
-        <Link to={link} className={s.link}>{actionToDo}</Link>
+        <Link to={link} className={s.formLink}>{actionToDo}</Link>
         <h1>{actionType}</h1>
         <form action='#'>
             <input type="text" required placeholder='Логин' name="login"/>
@@ -15,7 +15,7 @@ export default function Form({link, actionType, actionToDo, action}) {
             <label htmlFor="agreement">
                 <input type="radio" name="agreement"/>
                 Я согласен получать обновления на почту
-                <div className={s.radioControl}></div>
+                <div className={s.formRadio}></div>
             </label>
             <Button children={action} />
         </form>

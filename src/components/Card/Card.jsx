@@ -1,5 +1,5 @@
 import React from 'react';
-import AddCancelBtn from '../AddCancelBtn/AddCancelBtn';
+import AddBtn from '../AddBtn/AddBtn';
 import s from "./Card.module.sass";
 
 export default function Card({src, title, description, price, output}) {
@@ -13,7 +13,7 @@ export default function Card({src, title, description, price, output}) {
             <p className={s.cardPrice}>{price} &#8381;</p>
             <p className={s.cardOutput}>/ {output}</p>
           </div>
-          <AddCancelBtn />       
+          <AddBtn />       
         </div>
     </div>
   )

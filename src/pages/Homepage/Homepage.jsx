@@ -25,7 +25,7 @@ export default function Homepage() {
           <Link to="/register">htibcnhfwbz</Link>
         </div>
       </div>
-      <div className={s.cardsContainer}>
+      <div className={s.homepageCardsContainer}>
       {
       menu.map(item => {
         return <Card 

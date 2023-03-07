@@ -1,31 +1,35 @@
 @import "../../assets/styles"
 
-.cartOrderItem
+.orderItem
     display: grid
     grid-template-columns: 530px 115px
     column-gap: 216px
     align-items: center
     margin-bottom: 35px
-    // justify-content: space-between
-    .cartProdData
+    .orderData
         display: grid
         grid-template-columns: 132px 310px
-        //grid-template-rows: 122px
         column-gap: 98px
         align-items: center
-        // &>img
-        //     width: 122px
-        //     height: 122px
-        .cartImg
+        .orderImg
             height: 132px
             background-size: cover
             background-repeat: no-repeat
-    .cartPriceData
+        .orderTitle
+            font-weight: 500
+            font-size: 17px
+            line-height: 21px
+            color: #fff
+            text-align: left
+    .orderPriceData
         display: grid
         grid-template-columns: auto auto
         column-gap: 15px
         align-items: center
-        .cardPrice
+        .orderPrice
+            font-weight: 500
+            font-size: 17px
+            line-height: 21px
             color: $accent-color
         button
             transform: rotate(90deg)
