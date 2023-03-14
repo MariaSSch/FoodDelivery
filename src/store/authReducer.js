@@ -11,7 +11,6 @@ const defaultState = {
         {login: "Oleg",
         password: "qwerty987"}
     ],
-    currentUsers: [],
     isAuth: false,
 }
 
@@ -29,26 +28,17 @@ export const authReducer = (state=defaultState, action) => {
             registeredUsers: [...state.registeredUsers, newUser]
         }
     } else if(action.type === "SIGN_IN") {
-        const user = state.currentUsers.find(elem => elem === action.payload);
-        console.log(user)
-        if (!user) {
-        const currentUser = {
-            login: action.type.login,
-            password: action.type.password
-        }
         return {...state,
-            currentUsers: [...state.currentUsers, currentUser],
+            isAuth: true,
         } 
-        } else {alert(",dfkfkjhk")}
     } else if (action.type === "SIGN_OUT") {
-        const user = state.currentUsers.find(elem => elem = action.payload);
         return {...state,
-            currentUsers: state.currentUsers.filter(elem => elem.login !== user.login)
+            isAuth: false
         }
     }
     return state;
 }
 
 export const getUser = (payload) => ({type: REGISTER, payload});
-export const setUser = (payload) => ({type: SIGN_IN, payload});
-export const getOutUser = (payload) => ({type: SIGN_OUT});
+export const setUser = () => ({type: SIGN_IN});
+export const getOutUser = () => ({type: SIGN_OUT});

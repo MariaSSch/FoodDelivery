@@ -18,18 +18,19 @@ console.log("users: ", registeredUsers)
       password: e.target.password.value
     }
     if (registeredUsers.some(elem => newUser.login === elem.login)) {
-     return alert("such a login is already exist")
+     alert("such a login is already exist")
 
     } else {
-      console.log(newUser)}
+      console.log(newUser)
 
     dispatch(getUser(newUser));
-   return alert("successfully registered")
+    alert("successfully registered")
+    }
   }
 
   return (
     <div className={s.registerpage}>
-      <Form onSubmitAction={handleRegister} link={'signin'} actionType="регистрация" actionToDo="Авторизоваться" action="Зарегистрироваться"/>
+      <Form onSubmitAction={handleRegister} link={'#'} actionType="регистрация" actionToDo="Авторизоваться" action="Зарегистрироваться"/>
     </div>
   )
 }
