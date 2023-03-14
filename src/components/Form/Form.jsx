@@ -1,15 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Button from '../Button/Button';
 
 import s from "./Form.module.sass";
 
-export default function Form({link, actionType, actionToDo, action}) {
+export default function Form({onSubmitAction, link, actionType, actionToDo, action}) {
+
+  const navigate = useNavigate();
+  const handleGoTo = () => {
+    navigate(`/app/${link}`)
+  }
   return (
     <div className={s.form}>
-        <Link to={link} className={s.formLink}>{actionToDo}</Link>
+        <p onClick={handleGoTo} className={s.formLink}>{actionToDo}</p>
         <h1>{actionType}</h1>
-        <form action='#'>
+        <form action='#' onSubmit={onSubmitAction}>
             <input type="text" required placeholder='Логин' name="login"/>
             <input type="password" required placeholder="Пароль" name="password"/>
             <label htmlFor="agreement">

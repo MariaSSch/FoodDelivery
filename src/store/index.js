@@ -3,11 +3,15 @@ import {routerReducer} from "react-router-redux";
 
 import {cartReducer} from "./cartReducer";
 import {authReducer} from "./authReducer";
+import {currentProdReducer} from "./currentProdReducer";
 
 const rootReducer = combineReducers({
     routing: routerReducer,
     cart: cartReducer,
     auth: authReducer,
+    currentProd: currentProdReducer,
 });
 
-export const store = createStore(rootReducer);
+export const store = createStore(
+    rootReducer,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
