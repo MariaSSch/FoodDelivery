@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Button from '../Button/Button';
 
 import s from "./Form.module.sass";
@@ -20,7 +20,7 @@ export default function Form({onSubmitAction, link, actionType, actionToDo, acti
             <label htmlFor="agreement">
                 <input type="radio" name="agreement"/>
                 Я согласен получать обновления на почту
-                <div className={s.formRadio}></div>
+                <div className={s.radioControl}></div>
             </label>
             <Button children={action} />
         </form>

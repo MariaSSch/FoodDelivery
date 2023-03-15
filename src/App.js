@@ -33,7 +33,7 @@ function App() {
           <Route path="/app/cart" element={(() => {
                                                 if(isAuth) return <Cartpage/>
                                                 else  return <Navigate to="/app"/>})()}/>
-          <Route path="/app/:id" element={(()=>{
+          <Route path="/app/catalog/:id" element={(()=>{
                                                 if(isAuth) return <SingleProdpage/>
                                                 else  return <Navigate to="/app"/>})()}/>
         </Routes>

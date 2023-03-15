@@ -54,6 +54,7 @@
             font-size: 11px
             line-height: 13px
             color: $agreement-font-color
+            text-align: left
             display: flex
             justify-content: center
             align-items: center
@@ -67,7 +68,7 @@
                 left: 3px
                 opacity: 0
                 z-index: 10
-            .formRadio
+            .radioControl
                 position: absolute
                 top: -2.5px
                 left: 0
@@ -82,3 +83,6 @@
         button
             @include  mix_button($bg-color: $accent-color, $color: $dark-btn-font-color, $border: 1px solid $accent-color)
             align-self: center
+@media(max-width: 576px)
+    .form
+        width: 300px

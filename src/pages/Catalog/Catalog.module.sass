@@ -1,18 +1,40 @@
 @import "../../assets/styles"
 
-.homepage
+.catalogpage
     padding: 54px 68px 67px 70px
     background-color: $bg-color
-    .homepageHeader
+    .catalogpageHeader
         display: flex
         justify-content: space-between
         align-items: center
         margin-bottom: 75px
         & > div
             display: flex
-    .homepageCardsContainer
+    .catalogpageCardsContainer
         display: grid
-        grid-template-columns: repeat(auto-fill, 312px)
+        grid-template-columns: repeat(auto-fill, minmax(250px, 312px))
         grid-template-rows: min-content
         row-gap: 35px
         column-gap: 18px
+        justify-content: center
+        justify-items: center
+@media(max-width: 992px)
+    .catalogpage
+        padding: 54px 30px 67px 30px
+        .catalogpageHeader
+            flex-direction: column-reverse
+            margin-bottom: 40px
+            h1
+                // align-self: flex-start
+                margin-top: 30px
+            // &>div
+            //     align-self: flex-end
+@media(max-width: 576px)
+    .catalogpage
+        h1
+            font-size: 28px
+        .catalogpageHeader > div
+            flex-direction: column-reverse
+            align-self: flex-end
+            height: 110px
+            justify-content: space-between

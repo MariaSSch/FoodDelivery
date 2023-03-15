@@ -21,6 +21,13 @@ export default function Cartpage() {
         dispatch(getOutUser());
         navigate("/app");
       }
+
+    const handleCompleteOrder = () => {
+        let prodsList = "";
+        prodsCounter.map(elem => prodsList += elem.title + ", ")
+        console.log("Всего товаров в заказе: ", prodsCounter.length, "на сумму: ", subtotal, "Список товаров: ", prodsList)
+    }
+
   return (
     <div className={s.cartpage}>
         <div className={s.cartpageHeader}>
@@ -31,6 +38,7 @@ export default function Cartpage() {
 
         {
         prodsCounter.length === 0 ? <p className={s.cartpageEmpty}>Ваша корзина пуста</p> :
+        <>
             <div className={s.cartpageContent}>
                 {
                     prodsCounter.map(prod=>{
@@ -39,15 +47,17 @@ export default function Cartpage() {
                     })
                 }
             </div>
-        }
 
-        <div className={s.cartpageFooter}>
+            <div className={s.cartpageFooter}>
             <div className={s.cartpageTotal}>
                 <p className={s.cartpageTotalText}>заказ на сумму: </p>
                 <p className={s.cartpageTotalPrice}>{subtotal}  &#8381;</p>
             </div>
-            <Button children="Оформить заказ"/>
-        </div>
+            <Button children="Оформить заказ" onClick={handleCompleteOrder}/>
+            </div>
+        </>
+        }
+
     </div>
   )
 }

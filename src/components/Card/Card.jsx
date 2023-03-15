@@ -12,13 +12,13 @@ export default function Card({prod}) {
 
   const handleClick = () => {
       dispatch(setCurrentProd(prod));
-      navigate(`app/${prod.id}`)
+      navigate(`${prod.id}`)
   }
  
   return (
     <div className={s.card}>
-        <img src={process.env.PUBLIC_URL+prod.image} alt="foto"/>
-        <p className={s.cardTitle}  onClick={handleClick}>
+        <img className={s.cardImg} src={process.env.PUBLIC_URL+prod.image} alt="foto"/>
+        <p className={s.cardTitle} lang="ru" onClick={handleClick}>
           {prod.title}
         </p>
         <p className={s.cardDescr}>

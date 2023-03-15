@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import { useNavigate } from 'react-router-dom';
 import Button from '../../components/Button/Button';
@@ -11,9 +11,9 @@ import s from "./Catalog.module.sass";
 
 export default function Catalog({menu}) {
 
-  const isAuth = useSelector(state => state.auth.isAuth);
+
+
   const dispatch = useDispatch();
-console.log(isAuth)
   const navigate = useNavigate();
 
   const handleGetout = () => {
@@ -22,23 +22,26 @@ console.log(isAuth)
   }
 
   return (
-    <div className={s.homepage}>
-      <div className={s.homepageHeader}>
+    <div className={s.catalogpage}>
+      <div className={s.catalogpageHeader}>
         <h1>наша продукция</h1>
         <div>
           <Cart />
           <Button onClick={handleGetout}>Выйти</Button>
         </div>
       </div>
-      <div className={s.homepageCardsContainer}>
+      <div className={s.catalogpageCardsContainer}>
       {
       menu.map(prod => {
         return <Card 
                 key={prod.id} 
-                prod={prod} />
+                prod={prod} 
+                />
       })
       }
       </div>
+      <div>left</div>
+      <div>right</div>
     </div>
   ) 
  
