@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Button from '../Button/Button';
+import Button from '../../UI/Button/Button';
 
 import s from "./Form.module.sass";
 
@@ -14,7 +14,7 @@ export default function Form({onSubmitAction, link, actionType, actionToDo, acti
     <div className={s.form}>
         <p onClick={handleGoTo} className={s.formLink}>{actionToDo}</p>
         <h1>{actionType}</h1>
-        <form action='#' onSubmit={onSubmitAction}>
+        <form action='#' onSubmit={onSubmitAction} autoComplete="off">
             <input type="text" required placeholder='Логин' name="login"/>
             <input type="password" required placeholder="Пароль" name="password"/>
             <label htmlFor="agreement">

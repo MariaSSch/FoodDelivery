@@ -6,6 +6,7 @@
 
 const ADD_IN_CART = "ADD_IN_CART";
 const DEL_FROM_CART = "DEL_FROM_CART";
+const EMPTY_CART = "EMPTY_CART";
 
 // const INCR_PROD_ITEM = "INCR_PROD_ITEM";
 // const DECR_PROD_ITEM = "DECR_PROD_ITEM";
@@ -32,7 +33,7 @@ export const cartReducer = (state=defaultState, action) => {
 // /**************************************************************************** */
      if(action.type === ADD_IN_CART) {
         const prodItemToCount = {
-            id: action.payload.id,
+            id: Date.now(),
             count: 1,
             price: action.payload.price,
             currPrice: action.payload.price,
@@ -52,6 +53,8 @@ export const cartReducer = (state=defaultState, action) => {
                 prodsCounter: reducedCart,
                 subtotal: reducedCart.reduce((prev, prod) => prev + prod.price, 0),
             }
+    } else if(action.type === EMPTY_CART) {
+        return defaultState;
     }
 // /*---------------------------------------------------------*/
 //      else if(action.type === INCR_PROD_ITEM) {
@@ -102,6 +105,7 @@ export const cartReducer = (state=defaultState, action) => {
 
 export const addInCart = (payload) => ({type: ADD_IN_CART, payload});
 export const delFromCart = (payload) => ({type: DEL_FROM_CART, payload});
+export const emptyCart = () => ({type: EMPTY_CART});
 
 // export const incrProd = (payload) => ({type: INCR_PROD_ITEM, payload});
 // export const decrProd = (payload) => ({type: DECR_PROD_ITEM, payload: payload});

@@ -6,7 +6,8 @@ import Signinpage from "./pages/Signinpage/Signinpage";
 import Cartpage from "./pages/Cartpage/Cartpage";
 import './App.sass';
 import SingleProdpage from "./pages/SingleProdpage/SingleProdpage";
-import { useSelector } from "react-redux";
+import Awarepage from './pages/Awarepage/Awarepage';
+import RequireAuth from './hoc/RequireAuth';
 
 function App() {
   const [menu, setMenu] = useState([]);
@@ -17,25 +18,21 @@ function App() {
         .then(data => setMenu(data))
   }, [])
 
-  const isAuth = useSelector(state => state.auth.isAuth);
 
 
   return (
       <div className="App">
         <Routes>
-          <Route index path="/app" element={<Signinpage/>}/>
+          <Route path="/app/signin" element={<Signinpage/>}/>
           <Route path="/app/register" element={<Registerpage/>}/>
-
-          <Route path="/app/catalog"  element={(() => {
-                                                if(isAuth) return <Catalog menu={menu}/>
-                                                else return <Navigate to="/app"/>}
-                                                )()}/>
-          <Route path="/app/cart" element={(() => {
-                                                if(isAuth) return <Cartpage/>
-                                                else  return <Navigate to="/app"/>})()}/>
-          <Route path="/app/catalog/:id" element={(()=>{
-                                                if(isAuth) return <SingleProdpage/>
-                                                else  return <Navigate to="/app"/>})()}/>
+          <Route path="/app/aware" element={<Awarepage/>} />
+          <Route index path="/app"  element={<Catalog menu={menu}/>} />
+                                               
+          <Route path="/app/cart" element={
+                              <RequireAuth>
+                                {<Cartpage/>}
+                              </RequireAuth>     }/>
+          <Route path="/app/:id" element={<SingleProdpage/> }/>
         </Routes>
       </div>
   );

@@ -9,9 +9,9 @@ import s from "./Signin.module.sass";
 export default function Signinpage() {
 
   const dispatch = useDispatch();
-  const registeredUsers = useSelector(state => state.auth.registeredUsers);
-
   const navigate = useNavigate();
+
+  const registeredUsers = useSelector(state => state.auth.registeredUsers);
 
   const handleSignin = (e) => {
     e.preventDefault();
@@ -21,13 +21,14 @@ export default function Signinpage() {
     }
     if(registeredUsers.some(elem => currentUser.login === elem.login && currentUser.password === elem.password)) {
       dispatch(setUser());
-      navigate("catalog");
+      navigate("/app");
 
     } else {
       alert("wrong login or password")
     }
   }
-  return (
+
+return (
     <div className={s.signinpage}>
       <Form onSubmitAction={handleSignin} link={'register'} actionType="вход"  actionToDo="Зарегистрироваться"  action="Войти"/>
     </div>

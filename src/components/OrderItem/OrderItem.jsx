@@ -1,5 +1,6 @@
 import React from 'react';
-import DeleteBtn from '../DeleteBtn/DeleteBtn';
+import CountElem from '../../UI/CountElem/CountElem';
+import DeleteBtn from '../../UI/DeleteBtn/DeleteBtn';
 
 import s from "./Order.module.sass";
 
@@ -14,6 +15,7 @@ export default function OrderItem({prod}) {
               {prod.title}
             </p>
         </div>
+        <CountElem />
         <div className={s.orderPriceData}>
             <p className={s.orderPrice}>
               {prod.price}  &#8381;

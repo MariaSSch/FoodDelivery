@@ -15,9 +15,11 @@
         align-items: center
         width: 100%
         margin-bottom: 38px
+        &>div
+            display: flex
+            align-items: center
         h1
-            position: relative
-            left: -143px
+            margin-left: 63px
     .cartpageEmpty
         color: $accent-color
         text-transform: uppercase
@@ -62,3 +64,18 @@
             &:hover
                 background-color: transparent
                 color: $accent-color
+@media(max-width: 1200px)
+    .cartpage
+        .cartpageHeader
+            flex-direction: column-reverse
+            &>div
+                flex-direction: column
+                width: 100%
+            &>div button
+                align-self: flex-start 
+            button
+                align-self: flex-end
+@media(max-width: 992px)
+    .cartpage
+        .cartpageHeader
+

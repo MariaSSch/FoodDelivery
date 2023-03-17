@@ -1,0 +1,52 @@
+@import "../../assets/styles"
+
+.singleProd
+    display: grid
+    grid-template-columns: 501px 528px
+    grid-template-rows: min-content
+    column-gap: 200px
+    align-items: center
+    .singleProdImg
+        height: 503px
+        
+        background-size: cover
+        background-repeat: no-repeat
+        background-position: center
+    .singleProdInfo
+        text-align: left
+        .singleProdTitle
+            font-weight: 500
+            font-size: 30px
+            line-height: 37px
+            color: $accent-color
+            margin-bottom: 21px
+        .singleProdFullDescr
+            font-weight: 400
+            font-size: 14px
+            line-height: 17px
+            color: #FFFFFF
+            margin-bottom: 34px
+        .singleProdOrder
+            display: flex
+            justify-content: space-between
+            align-items: center
+            &>div
+                display: flex
+                align-items: center
+                .singleProdPrice
+                    font-weight: 500
+                    font-size: 23px
+                    line-height: 28px
+                    color: #fff
+                    margin-right: 10px
+                .singleProdOutput
+                    font-weight: 400
+                    font-size: 18px
+                    line-height: 22px
+                    color: #fff
+            button
+                @include mix_button($bg-color: $accent-color, $color: $dark-btn-font-color, $border: 1px solid $accent-color)
+                margin-right: 108px
+                &:hover
+                    background-color: transparent
+                    color: $accent-color
