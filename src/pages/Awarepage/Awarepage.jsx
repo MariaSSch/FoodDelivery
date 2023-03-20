@@ -10,7 +10,7 @@ export default function Awarepage() {
         </h1>
         <div className={s.links}>
             <Link to="/app/signin">Авторизоваться</Link>
-            <Link to="/register">Зарегистрироваться</Link>
+            <Link to="/app/register">Зарегистрироваться</Link>
         </div>
     </div>
   )

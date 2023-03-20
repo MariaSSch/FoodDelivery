@@ -1,4 +1,6 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { changeProd, decrProd, incrProd, delFromCart } from '../../store/cartReducer';
 import CountElem from '../../UI/CountElem/CountElem';
 import DeleteBtn from '../../UI/DeleteBtn/DeleteBtn';
 
@@ -6,7 +8,20 @@ import s from "./Order.module.sass";
 
 export default function OrderItem({prod}) {
 
+  const dispatch = useDispatch();
+  const handleChangeCount = (id, value) => {
+    dispatch(changeProd(id, value))
+  }
+  const handleIncr = (id) => {
+    dispatch(incrProd(id));
+  }
+  const handleDecr = (id) => {
+    dispatch(decrProd(id));
+  }
 
+  const handleDelete = (id) => {
+    dispatch(delFromCart(id))
+  }
   return (
     <div className={s.orderItem}>
         <div className={s.orderData}>
@@ -15,12 +30,16 @@ export default function OrderItem({prod}) {
               {prod.title}
             </p>
         </div>
-        <CountElem />
+        <CountElem handleChangeCount={handleChangeCount} 
+                  handleIncr={handleIncr} 
+                  handleDecr={handleDecr}
+                  count={prod.count}
+                  id={prod.id}/>
         <div className={s.orderPriceData}>
             <p className={s.orderPrice}>
-              {prod.price}  &#8381;
+              {prod.currPrice}  &#8381;
             </p>
-            <DeleteBtn prod={prod}/>
+            <DeleteBtn id={prod.id} handleDelete={handleDelete}/>
         </div>
     </div>
   )

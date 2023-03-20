@@ -8,9 +8,9 @@ const ADD_IN_CART = "ADD_IN_CART";
 const DEL_FROM_CART = "DEL_FROM_CART";
 const EMPTY_CART = "EMPTY_CART";
 
-// const INCR_PROD_ITEM = "INCR_PROD_ITEM";
-// const DECR_PROD_ITEM = "DECR_PROD_ITEM";
-// const CHANGE_PROD_ITEM = "CHANGE_PROD_ITEM";
+const INCR_PROD = "INCR_PROD";
+const DECR_PROD = "DECR_PROD";
+const CHANGE_PROD_COUNT = "CHANGE_PROD_COUNT";
 
 const defaultState = { 
     // products: goods_list,
@@ -21,16 +21,6 @@ const defaultState = {
 
 export const cartReducer = (state=defaultState, action) => {
 
-//     if (action.type === SORT_BY_BRAND) {
-//         return {...state,
-//                 products: goods_list.filter((prod) => `Brand ${prod["brand"]}` === action.payload),
-//              }
-//     } else if (action.type === SHOW_ALL_BRANDS) {
-//         return {...state,
-//             products: goods_list,
-//          }
-//        } else if
-// /**************************************************************************** */
      if(action.type === ADD_IN_CART) {
         const prodItemToCount = {
             id: Date.now(),
@@ -48,7 +38,7 @@ export const cartReducer = (state=defaultState, action) => {
             }
 
     } else if(action.type === DEL_FROM_CART) {
-        const reducedCart = state.prodsCounter.filter((item) => item.id !== action.payload);
+        const reducedCart = state.prodsCounter.filter((prod) => prod.id !== action.payload);
         return {...state, 
                 prodsCounter: reducedCart,
                 subtotal: reducedCart.reduce((prev, prod) => prev + prod.price, 0),
@@ -57,56 +47,54 @@ export const cartReducer = (state=defaultState, action) => {
         return defaultState;
     }
 // /*---------------------------------------------------------*/
-//      else if(action.type === INCR_PROD_ITEM) {
-//         state.prodsCounter.map(item => {
-//             if (item.id === action.payload) {
-//                 item.count = item.count+1;
-//                 item.total_price = item.count * item.price;
-//                 return item;
-//             } 
-//         return state.prodsCounter} )
-//             return {...state,
-//                 prodsCounter: state.prodsCounter,
-//                 subtotal: state.prodsCounter.reduce((prev, prod) => prev + prod.total_price, 0),
-//                 }
+     else if(action.type === INCR_PROD) {
+        state.prodsCounter.map(prod => {
+            if (prod.id === action.payload) {
+                prod.count = prod.count+1;
+                prod.currPrice = prod.count * prod.price;
+                return prod;
+            } 
+        return state.prodsCounter} )
+            return {...state,
+                prodsCounter: state.prodsCounter,
+                subtotal: state.prodsCounter.reduce((prev, prod) => prev + prod.currPrice, 0),
+                }
         
 
-//     } else if(action.type === DECR_PROD_ITEM) {
-//         state.prodsCounter.map(item => {
-//             if (item.id === action.payload) {
-//                 item.count = item.count-1 > 1 ? --item.count : 1;
-//                 item.total_price = item.count * item.price;
-//                 return item;
-//             } 
-//             return state.prodsCounter} )
-//             return {...state,
-//                 prodsCounter: state.prodsCounter,
-//                 subtotal: state.prodsCounter.reduce((prev, prod) => prev + prod.total_price, 0),
-//                 }
+    } else if(action.type === DECR_PROD) {
+        state.prodsCounter.map(prod => {
+            if (prod.id === action.payload) {
+                prod.count = prod.count-1 > 1 ? --prod.count : 1;
+                prod.currPrice = prod.count * prod.price;
+                return prod;
+            } 
+            return state.prodsCounter} 
+            )
+            return {...state,
+                prodsCounter: state.prodsCounter,
+                subtotal: state.prodsCounter.reduce((prev, prod) => prev + prod.currPrice, 0),
+                }
         
 
-//     } else if(action.type === CHANGE_PROD_ITEM) {
-//         state.prodsCounter.map((item) => {
-//             if (item.id === action.id) {
-//                 item.count = action.payload;
-//                 item.total_price = item.count * item.price;
-//             }  
-//             return state.prodsCounter} )
-//             return {...state,
-//                 prodsCounter: state.prodsCounter,
-//                 subtotal: state.prodsCounter.reduce((prev, prod) => prev + prod.total_price, 0),
-//                 }
-//     } 
+    } else if(action.type === CHANGE_PROD_COUNT) {
+        state.prodsCounter.map((prod) => {
+            if (prod.id === action.id) {
+                prod.count = action.payload;
+                prod.currPrice = prod.count * prod.price;
+            }  
+            return state.prodsCounter} )
+            return {...state,
+                prodsCounter: state.prodsCounter,
+                subtotal: state.prodsCounter.reduce((prev, prod) => prev + prod.currPrice, 0),
+                }
+    } 
     return state;
 }
-
-// export const sortByBrand = (payload) => ({type: SORT_BY_BRAND, payload});
-// export const showAllBrands = () => ({type: SHOW_ALL_BRANDS});
 
 export const addInCart = (payload) => ({type: ADD_IN_CART, payload});
 export const delFromCart = (payload) => ({type: DEL_FROM_CART, payload});
 export const emptyCart = () => ({type: EMPTY_CART});
 
-// export const incrProd = (payload) => ({type: INCR_PROD_ITEM, payload});
-// export const decrProd = (payload) => ({type: DECR_PROD_ITEM, payload: payload});
-// export const changeProd = (id, payload) => ({type: CHANGE_PROD_ITEM, id, payload});
+export const incrProd = (payload) => ({type: INCR_PROD, payload});
+export const decrProd = (payload) => ({type: DECR_PROD, payload: payload});
+export const changeProd = (id, payload) => ({type: CHANGE_PROD_COUNT, id, payload});
