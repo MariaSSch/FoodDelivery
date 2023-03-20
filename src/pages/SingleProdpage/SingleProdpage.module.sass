@@ -3,16 +3,27 @@
 .singlepage
     background-color: $bg-color
     padding: 63px 70px 108px
-    display: flex
-    flex-direction: column
-    align-items: center
-    height: 100vh
+    // display: flex
+    // flex-direction: column
+    // align-items: center
+    // height: 100vh
+    margin: 0 auto
     .singlepageHeader
-        display: flex
+        display: grid
+        grid-template-columns: 32px auto
         justify-content: space-between
-        align-items: center
         margin-bottom: 25px
         width: 100%
         & > div
             display: flex
+            // align-items: center
+@media(max-width: 576px)
+    .singlepage
+        padding: 25px 35px 25px
+        .singlepageHeader
+            &>div
+                height: 42px+50px+20px
+                flex-direction: column-reverse
+                align-items: flex-end
+                justify-content: space-between
 

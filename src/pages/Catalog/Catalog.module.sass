@@ -4,12 +4,14 @@
     padding: 54px 68px 67px 70px
     background-color: $bg-color
     .catalogpageHeader
-        display: flex
+        display: grid
+        grid-template-columns: auto auto
         justify-content: space-between
         align-items: center
-        margin-bottom: 75px
+        margin-bottom: 28px //75-47(form)
         & > div
             display: flex
+            align-items: center
     .catalogpageCardsContainer
         display: grid
         grid-template-columns: repeat(auto-fill, minmax(250px, 312px))
@@ -22,17 +24,15 @@
     .catalogpage
         padding: 54px 30px 67px 30px
         .catalogpageHeader
-            flex-direction: column-reverse
-            margin-bottom: 40px
+            row-gap: 20px
             h1
-                // align-self: flex-start
-                margin-top: 30px
-            // &>div
-            //     align-self: flex-end
+                grid-column: 1/3
+                grid-row: 2/3
+                justify-self: flex-start
+            &>div
+                grid-column: 2/3
 @media(max-width: 576px)
     .catalogpage
-        h1
-            font-size: 28px
         .catalogpageHeader > div
             flex-direction: column-reverse
             align-self: flex-end

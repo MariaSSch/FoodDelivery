@@ -24,11 +24,11 @@ export default function Cartpage() {
   return (
     <div className={s.cartpage}>
         <div className={s.cartpageHeader}>
-            <div>
-                <ArrowBtn />
-                <h1>Корзина с выбранными товарами</h1>
-            </div>
-            <GetoutButton/>
+            <ArrowBtn />
+            {(document.body.clientWidth >= 495) ? 
+            <h1>Корзина с выбранными товарами</h1> : 
+            <h1>Выбранные товары</h1>}
+            <div  className={s.getoutBtn}><GetoutButton/></div>
         </div>
 
         {
@@ -44,11 +44,11 @@ export default function Cartpage() {
             </div>
 
             <div className={s.cartpageFooter}>
-            <div className={s.cartpageTotal}>
-                <p className={s.cartpageTotalText}>заказ на сумму: </p>
-                <p className={s.cartpageTotalPrice}>{subtotal}  &#8381;</p>
-            </div>
-            <Button children="Оформить заказ" onClick={handleCompleteOrder}/>
+                <div className={s.cartpageTotal}>
+                    <p className={s.cartpageTotalText}>заказ на сумму: </p>
+                    <p className={s.cartpageTotalPrice}>{subtotal}  &#8381;</p>
+                </div>
+                <Button children="Оформить заказ" onClick={handleCompleteOrder}/>
             </div>
         </>
         }

@@ -14,16 +14,14 @@ export default function Catalog({menu}) {
 
   const [searchParams, setSearchParams] = useSearchParams();
   const prodChoice = searchParams.get("app") || "";
-  console.log("prodChoice ", prodChoice)
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleSelect = () => {
     const choice = document.querySelector("select").value;
     console.log("choice: ", choice)
     setSearchParams({app: choice})
   }
-
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const handleClick = (prod) => {
     dispatch(setCurrentProd(prod));

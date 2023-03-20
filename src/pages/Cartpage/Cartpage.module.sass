@@ -10,16 +10,15 @@
     height: 60vh
     padding: 53px 70px 27px
     .cartpageHeader
-        display: flex
-        justify-content: space-between
+        display: grid
+        grid-template-columns: 32px auto 200px
+        column-gap: 63px
         align-items: center
         width: 100%
         margin-bottom: 38px
-        &>div
-            display: flex
-            align-items: center
         h1
-            margin-left: 63px
+            justify-self: flex-start
+            text-align: left
     .cartpageEmpty
         color: $accent-color
         text-transform: uppercase
@@ -64,18 +63,28 @@
             &:hover
                 background-color: transparent
                 color: $accent-color
-@media(max-width: 1200px)
-    .cartpage
-        .cartpageHeader
-            flex-direction: column-reverse
-            &>div
-                flex-direction: column
-                width: 100%
-            &>div button
-                align-self: flex-start 
-            button
-                align-self: flex-end
 @media(max-width: 992px)
     .cartpage
         .cartpageHeader
+            grid-template-columns: auto auto 200px
+            column-gap: 1px
+            grid-auto-rows: min-content
+            h1
+                grid-column: 1/4
+                grid-row: 2/3
+                margin-top: 20px
+            .getoutBtn
+                grid-column: 3/4
 
+        .cartpageFooter
+            flex-direction: column
+            align-items: center
+            .cartpageTotal
+                margin-bottom: 20px
+                .cartpageTotalText
+                    font-size: 18px
+                .cartpageTotalPrice
+                    font-size: 16px
+@media(max-width: 495px)
+        .cartpage
+            padding: 53px 35px 27px

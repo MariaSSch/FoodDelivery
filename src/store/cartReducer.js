@@ -1,9 +1,3 @@
-// import goods_list from "../assets/products.json";
-// import brand_list from "../assets/brands.json";
-
-// const SORT_BY_BRAND = "SORT_BY_BRAND";
-// const SHOW_ALL_BRANDS = "SHOW_ALL_BRANDS";
-
 const ADD_IN_CART = "ADD_IN_CART";
 const DEL_FROM_CART = "DEL_FROM_CART";
 const EMPTY_CART = "EMPTY_CART";
@@ -13,8 +7,6 @@ const DECR_PROD = "DECR_PROD";
 const CHANGE_PROD_COUNT = "CHANGE_PROD_COUNT";
 
 const defaultState = { 
-    // products: goods_list,
-    // brands: brand_list,
     prodsCounter: [],
     subtotal: 0,
 };
