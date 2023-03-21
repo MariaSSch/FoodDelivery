@@ -1,11 +1,11 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import ArrowBtn from '../../UI/ArrowBtn/ArrowBtn';
 import GetoutButton from '../../UI/GetoutButton/GetoutButton';
 import Button from '../../UI/Button/Button';
 import OrderItem from '../../components/OrderItem/OrderItem';
 
 import s from "./Cartpage.module.sass"
-import ArrowBtn from '../../UI/ArrowBtn/ArrowBtn';
-import { useSelector } from 'react-redux';
 
 
 export default function Cartpage() {

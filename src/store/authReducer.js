@@ -2,14 +2,14 @@ const defaultState = {
     registeredUsers: [
         {
             login: "admin",
-            password: "pass"
+            password: "Pass"
         },
         {
             login: "Masha",
-            password: "123kasha"
+            password: "123Kasha"
         },
         {login: "Oleg",
-        password: "qwerty987"}
+        password: "Qwerty987"}
     ],
     isAuth: false,
 }

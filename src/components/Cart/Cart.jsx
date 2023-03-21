@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import cart from "./../../assets/cart.svg"
 import s from "./Cart.module.sass";
 
@@ -16,6 +16,7 @@ export default function Cart() {
     prodsCounter: cart.prodsCounter,
     subtotal: cart.subtotal,
   }))
+  
   return (
     <div className={s.cart}>
         <div className={s.cartInfo}>

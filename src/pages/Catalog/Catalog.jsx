@@ -1,12 +1,11 @@
 import React from 'react';
 import { useDispatch } from "react-redux";
-
 import { useNavigate, useSearchParams } from 'react-router-dom';
+import { setCurrentProd } from '../../store/currentProdReducer';
 import GetoutButton from '../../UI/GetoutButton/GetoutButton';
 import Card from '../../components/Card/Card';
 import Cart from '../../components/Cart/Cart';
 import ChooseCategory from '../../components/ChooseCategory/ChooseCategory';
-import { setCurrentProd } from '../../store/currentProdReducer';
 
 import s from "./Catalog.module.sass";
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import Form from '../../components/Form/Form';
 import { setUser } from '../../store/authReducer';
+import Form from '../../components/Form/Form';
 import s from "./Signin.module.sass";
 
 
@@ -30,7 +30,11 @@ export default function Signinpage() {
 
 return (
     <div className={s.signinpage}>
-      <Form onSubmitAction={handleSignin} link={'register'} actionType="вход"  actionToDo="Зарегистрироваться"  action="Войти"/>
+      <Form onSubmitAction={handleSignin} 
+            link={'register'} 
+            actionType="вход"  
+            actionToDo="Зарегистрироваться"  
+            action="Войти"/>
     </div>
   )
 }

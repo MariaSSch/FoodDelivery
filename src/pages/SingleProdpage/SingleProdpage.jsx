@@ -1,11 +1,11 @@
 import React from 'react';
+import { useDispatch, useSelector } from "react-redux";
+import { addInCart } from '../../store/cartReducer';
 import ArrowBtn from '../../UI/ArrowBtn/ArrowBtn';
 import GetoutButton from '../../UI/GetoutButton/GetoutButton';
 import Cart from '../../components/Cart/Cart';
-import { useDispatch, useSelector } from "react-redux";
-import { addInCart } from '../../store/cartReducer';
-import s from "./SingleProdpage.module.sass";
 import SingleProd from '../../components/SingleProd/SingleProd';
+import s from "./SingleProdpage.module.sass";
 
 export default function SingleProdpage() {
 

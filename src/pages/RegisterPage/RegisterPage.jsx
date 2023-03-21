@@ -1,9 +1,9 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from 'react-router-dom';
 import { getUser, setUser } from '../../store/authReducer';
 import Form from '../../components/Form/Form';
 import s from "./Register.module.sass";
-import { useNavigate } from 'react-router-dom';
 
 export default function Registerpage() {
 
@@ -11,7 +11,6 @@ export default function Registerpage() {
   const navigate = useNavigate();
   const registeredUsers = useSelector(state => state.auth.registeredUsers);
 
-console.log("users: ", registeredUsers)
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -32,7 +31,11 @@ console.log("users: ", registeredUsers)
 
   return (
     <div className={s.registerpage}>
-      <Form onSubmitAction={handleRegister} link={'#'} actionType="регистрация" actionToDo="Авторизоваться" action="Зарегистрироваться"/>
+      <Form onSubmitAction={handleRegister} 
+            link={'signin'} 
+            actionType="регистрация" 
+            actionToDo="Авторизоваться" 
+            action="Зарегистрироваться"/>
     </div>
   )
 }
