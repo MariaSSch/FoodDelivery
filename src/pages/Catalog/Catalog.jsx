@@ -18,7 +18,6 @@ export default function Catalog({menu}) {
 
   const handleSelect = () => {
     const choice = document.querySelector("select").value;
-    console.log("choice: ", choice)
     setSearchParams({app: choice})
   }
 

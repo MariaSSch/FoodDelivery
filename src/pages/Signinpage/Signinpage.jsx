@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setUser } from '../../store/authReducer';
@@ -8,11 +8,11 @@ import s from "./Signin.module.sass";
 
 export default function Signinpage() {
 
+  const [submitError, setSubmitError] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const registeredUsers = useSelector(state => state.auth.registeredUsers);
-
   const handleSignin = (e) => {
     e.preventDefault();
     const currentUser = {
@@ -24,7 +24,7 @@ export default function Signinpage() {
       navigate("/app");
 
     } else {
-      alert("wrong login or password")
+      setSubmitError("Логин или пароль неверен");
     }
   }
 
@@ -34,7 +34,8 @@ return (
             link={'register'} 
             actionType="вход"  
             actionToDo="Зарегистрироваться"  
-            action="Войти"/>
+            action="Войти"
+            submitError={submitError}/>
     </div>
   )
 }

@@ -2,7 +2,7 @@ const defaultState = {
     registeredUsers: [
         {
             login: "admin",
-            password: "Pass"
+            password: "Pass1"
         },
         {
             login: "Masha",

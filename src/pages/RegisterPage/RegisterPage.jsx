@@ -35,7 +35,8 @@ export default function Registerpage() {
             link={'signin'} 
             actionType="регистрация" 
             actionToDo="Авторизоваться" 
-            action="Зарегистрироваться"/>
+            action="Зарегистрироваться"
+            submitError=""/>
     </div>
   )
 }
