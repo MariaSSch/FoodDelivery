@@ -17,7 +17,6 @@ export default function SingleProdpage() {
         fetch(`http://localhost:8000/menu/${id}`)
             .then(res => res.json())
             .then(data => setProd(data))
-            console.log(prod)
       }, [id]);
     
 

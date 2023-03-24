@@ -6,7 +6,7 @@ import { HashRouter, Route, Routes } from 'react-router-dom';
 // import {syncHistoryWithStore}  from "react-router-redux";
 
 import App from './App';
-import { store } from './store';
+import  store from './store';
 
 import './index.sass';
 

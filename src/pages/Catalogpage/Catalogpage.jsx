@@ -5,10 +5,10 @@ import Card from '../../components/Card/Card';
 import Cart from '../../components/Cart/Cart';
 import ChooseCategory from '../../components/ChooseCategory/ChooseCategory';
 
-import s from "./Catalog.module.sass";
+import s from "./Catalogpage.module.sass";
 
-export default function Catalog({menu}) {
-
+export default function Catalogpage({menu}) {
+  
   const [searchParams, setSearchParams] = useSearchParams();
   const prodChoice = searchParams.get("app") || "";
   const navigate = useNavigate();

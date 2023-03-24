@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {Navigate, Route, Routes} from "react-router-dom";
-import Catalog from "./pages/Catalog/Catalog";
+import Catalogpage from "./pages/Catalogpage/Catalogpage";
 import Registerpage from "./pages/Registerpage/Registerpage";
 import Signinpage from "./pages/Signinpage/Signinpage";
 import Cartpage from "./pages/Cartpage/Cartpage";
@@ -26,7 +26,7 @@ function App() {
           <Route path="/app/signin" element={<Signinpage/>}/>
           <Route path="/app/register" element={<Registerpage/>}/>
           <Route path="/app/aware" element={<Awarepage/>} />
-          <Route index path="/app"  element={<Catalog menu={menu}/>} />
+          <Route index path="/app"  element={<Catalogpage menu={menu}/>} />
                                                
           <Route path="/app/cart" element={
                               <RequireAuth>
