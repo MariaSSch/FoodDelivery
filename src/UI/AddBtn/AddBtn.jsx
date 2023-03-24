@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import cross from "../../assets/cross.svg";
+import { ReactComponent as Cross} from "../../assets/cross.svg";
 import { addInCart } from '../../store/cartReducer';
 import s from "./AddBtn.module.sass";
 
@@ -13,7 +13,7 @@ export default function AddBtn({prod, ...props}) {
 
   return (
     <button className={s.addBtn} {...props} onClick={handleAdd}>
-      <img src={cross} alt="cross"/>
+      <Cross className={s.addBtnCross}/>
     </button>
 
     

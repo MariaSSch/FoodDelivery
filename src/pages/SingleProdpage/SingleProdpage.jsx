@@ -1,5 +1,7 @@
-import React from 'react';
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState, useEffect } from 'react';
+import { useDispatch } from "react-redux";
+import { useParams } from 'react-router-dom';
+
 import { addInCart } from '../../store/cartReducer';
 import ArrowBtn from '../../UI/ArrowBtn/ArrowBtn';
 import GetoutButton from '../../UI/GetoutButton/GetoutButton';
@@ -8,13 +10,23 @@ import SingleProd from '../../components/SingleProd/SingleProd';
 import s from "./SingleProdpage.module.sass";
 
 export default function SingleProdpage() {
+    const {id} = useParams();
+    const [prod, setProd] = useState(null);
+
+    useEffect(()=>{
+        fetch(`http://localhost:8000/menu/${id}`)
+            .then(res => res.json())
+            .then(data => setProd(data))
+            console.log(prod)
+      }, [id]);
+    
+
 
     const dispatch = useDispatch();
-    const prod = useSelector(state => state.currentProd)
     
     const handleAdd = () => {
         dispatch(addInCart(prod));
-      }
+       }
 
   return (
     <div className={s.singlepage}>
@@ -25,7 +37,7 @@ export default function SingleProdpage() {
                 <GetoutButton />
             </div>
         </div>
-        <SingleProd prod={prod} handleAdd={handleAdd}/>
+        {prod && <SingleProd prod={prod} handleAdd={handleAdd}/>}
     </div>
   )
 }

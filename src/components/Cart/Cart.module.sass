@@ -9,7 +9,7 @@
         line-height: 21px
         text-align: right
         color: #fff
-    .cartSign
+    .cartSignContainer
         display: flex
         justify-content: center
         align-items: center
@@ -18,15 +18,17 @@
         border-radius: 50%
         background-color: $accent-color
         margin: 0 20px
-        img
-            background-color: $accent-color
-            padding-bottom: 4px
-            cursor: pointer
         &:hover
             background-color: transparent
             border: 1px solid $accent-color
-        &:hover img
-            background-color: transparent
-            color: $accent-color
+        &:hover .cartSign
+            background-color: $bg-color
+        &:hover .cartSign *
+            fill: $accent-color
+
+        .cartSign
+            background-color: $accent-color
+            padding-bottom: 4px
+            cursor: pointer
         
 

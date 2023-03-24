@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import cart from "./../../assets/cart.svg"
+import {ReactComponent as Cartsign} from "./../../assets/cart.svg"
 import s from "./Cart.module.sass";
 
 export default function Cart() {
@@ -23,8 +23,8 @@ export default function Cart() {
             <p>{prodsCounter.length} товара</p>
             <p>на сумму {subtotal} &#8381;</p>
         </div>
-        <div className={s.cartSign}>
-          <img src={cart} alt="cart" onClick={handleClick}/>
+        <div className={s.cartSignContainer}>
+          <Cartsign className={s.cartSign} onClick={handleClick}/>
         </div>
     </div>
   )

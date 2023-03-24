@@ -13,7 +13,7 @@ export default function GetoutButton() {
   const handleGetout = () => {
     dispatch(getOutUser());
     dispatch(emptyCart());
-    navigate("/app", {replace: true});
+    navigate("/app/signin", {replace: true});
   }
   return (
     <button className={s.getoutBtn} type="submit" onClick={handleGetout}>Выйти</button>

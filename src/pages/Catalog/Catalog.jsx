@@ -1,7 +1,5 @@
 import React from 'react';
-import { useDispatch } from "react-redux";
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { setCurrentProd } from '../../store/currentProdReducer';
 import GetoutButton from '../../UI/GetoutButton/GetoutButton';
 import Card from '../../components/Card/Card';
 import Cart from '../../components/Cart/Cart';
@@ -13,7 +11,6 @@ export default function Catalog({menu}) {
 
   const [searchParams, setSearchParams] = useSearchParams();
   const prodChoice = searchParams.get("app") || "";
-  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleSelect = () => {
@@ -22,7 +19,6 @@ export default function Catalog({menu}) {
   }
 
   const handleClick = (prod) => {
-    dispatch(setCurrentProd(prod));
     navigate(`${prod.id}`)
 }
 

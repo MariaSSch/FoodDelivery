@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
 import s from "./ArrowBtn.module.sass";
-import arrow from "../../assets/backarrow.svg";
+import {ReactComponent as Arrow} from "../../assets/backarrow.svg";
 
 
 export default function ArrowBtn({...props}) {
@@ -10,7 +10,7 @@ export default function ArrowBtn({...props}) {
     <button 
         className={s.backArrow} 
         onClick={() => navigate(-1)}
-        {...props}><img src={arrow} alt="backarrow"/></button>
+        {...props}><Arrow className={s.arrow}/></button>
 
   )
 }

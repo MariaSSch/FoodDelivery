@@ -17,8 +17,9 @@ export default function Cartpage() {
 
     const handleCompleteOrder = () => {
         let prodsList = "";
-        prodsCounter.map(elem => prodsList += elem.title + ", ")
-        console.log("Всего товаров в заказе: ", prodsCounter.length, "на сумму: ", subtotal, "Список товаров: ", prodsList)
+        prodsCounter.map(elem => prodsList += elem.title + ", " + " " + elem.count + "шт.; ");
+        const prodsInOrder = prodsCounter.reduce((prev, prod) => prev + prod.count, 0);
+        console.log("Всего товаров в заказе: ", prodsInOrder, "на сумму: ", subtotal, "Список товаров: ", prodsList)
     }
 
   return (
