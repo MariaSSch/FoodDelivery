@@ -10,7 +10,7 @@ export default function SingleProd({prod, handleAdd}) {
               style={{backgroundImage: `url(${process.env.PUBLIC_URL + prod.image})`}}></div>
         <div className={s.singleProdInfo}>
             <div className={s.singleProdTitle}>{prod.title}</div>
-            <div className={s.singleProdFullDescr}>{prod.fullDescr}{prod.fullDescr}</div>
+            <div className={s.singleProdFullDescr}>{prod.description}{prod.fullDescr}</div>
             <div className={s.singleProdOrder}>
                 <div>
                     <div className={s.singleProdPrice}>{prod.price}  &#8381;</div>

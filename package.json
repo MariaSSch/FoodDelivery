@@ -1,5 +1,6 @@
 {
   "name": "foodapp",
+  "homepage": "https://github.com/MariaSSch/foodDeliveryDeploy",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -18,6 +19,8 @@
   },
   "scripts": {
     "dev": "concurrently \"npm run server\" \"npm start\"",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -43,6 +46,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^5.0.0",
     "json-server": "^0.17.3"
   }
 }

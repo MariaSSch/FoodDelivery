@@ -14,7 +14,7 @@ export default function SingleProdpage() {
     const [prod, setProd] = useState(null);
 
     useEffect(()=>{
-        fetch(`http://localhost:8000/menu/${id}`)
+        fetch(`https://my-json-server.typicode.com/MariaSSch/foodDeliveryDeploy/menu/${id}`)
             .then(res => res.json())
             .then(data => setProd(data))
       }, [id]);

@@ -12,7 +12,7 @@ import RequireAuth from './hoc/RequireAuth';
 function App() {
   const [menu, setMenu] = useState([]);
 
-  async function getMenu() {await fetch("http://localhost:8000/menu")
+  async function getMenu() {await fetch("https://my-json-server.typicode.com/MariaSSch/foodDeliveryDeploy/menu")
                           .then(res => res.json())
                           .then(data => setMenu(data));}
 
