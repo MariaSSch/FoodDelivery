@@ -35,7 +35,7 @@ export default function Catalogpage({menu}) {
       <ChooseCategory handleSelect={handleSelect}/>
       <div className={s.catalogpageCardsContainer}>
       {
-      menu.filter(prod => {
+      menu && menu.filter(prod => {
         if(prodChoice === "none" || prodChoice === "") {return menu} 
         else {return prod.category === prodChoice} 
       }).map(prod => {

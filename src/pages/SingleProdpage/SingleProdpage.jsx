@@ -27,7 +27,7 @@ export default function SingleProdpage() {
                 }
 
     useEffect(()=>{
-        getProd();
+        getProd(id);
       }, [id]);
     
 
