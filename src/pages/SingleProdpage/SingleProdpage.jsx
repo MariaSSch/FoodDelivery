@@ -13,10 +13,21 @@ export default function SingleProdpage() {
     const {id} = useParams();
     const [prod, setProd] = useState(null);
 
+    async function getProd() {
+        await fetch(`https://my-json-server.typicode.com/MariaSSch/foodDeliveryDeploy/menu/${id}`, {
+          method: "get",
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Accept": "application/json;odata.metadata=full",
+            "Content-Type": "application/json"
+          }
+        })
+                  .then(res => res.json())
+                  .then(data => setProd(data))
+                }
+
     useEffect(()=>{
-        fetch(`https://my-json-server.typicode.com/MariaSSch/foodDeliveryDeploy/menu/${id}`)
-            .then(res => res.json())
-            .then(data => setProd(data))
+        getProd();
       }, [id]);
     
 

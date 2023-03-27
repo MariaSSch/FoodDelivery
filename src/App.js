@@ -12,9 +12,18 @@ import RequireAuth from './hoc/RequireAuth';
 function App() {
   const [menu, setMenu] = useState([]);
 
-  async function getMenu() {await fetch("https://my-json-server.typicode.com/MariaSSch/foodDeliveryDeploy/menu")
+  async function getMenu() {
+                await fetch("https://my-json-server.typicode.com/MariaSSch/foodDeliveryDeploy/menu", {
+                  method: "get",
+                  headers: {
+                    "Access-Control-Allow-Origin": "*",
+                    "Accept": "application/json;odata.metadata=full",
+                    "Content-Type": "application/json"
+                  }
+                })
                           .then(res => res.json())
-                          .then(data => setMenu(data));}
+                          .then(data => setMenu(data))
+                        }
 
   useEffect(()=>{
     getMenu();
