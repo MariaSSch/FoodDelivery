@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Button from '../../UI/Button/Button';
 
 import s from "./Form.module.sass";
 
 export default function Form({onSubmitAction, link, actionType, actionToDo, action, submitError}) {
 
-  const navigate = useNavigate();
-  const handleGoTo = () => {
-    navigate(`/app/${link}`)
-  }
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
 
@@ -56,15 +52,8 @@ const showError = (input) => {
         
   }
 }
-
-
-
-// pattern="/^[a-zA-Z0-9]{4,20}$/"
-// pattern="/(?=^.{4,20}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/"
-
   return (
     <div className={s.form}>
-        {/* <p onClick={handleGoTo} className={s.formLink}>{actionToDo}</p> */}
         <Link className={s.formLink} to={`/app/${link}`}>{actionToDo}</Link>
         <h1>{actionType}</h1>
         <form noValidate 

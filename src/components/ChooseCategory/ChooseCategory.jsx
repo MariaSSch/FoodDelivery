@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import s from "./ChooseCategory.module.sass";
 
 export default function ChooseCategory({handleSelect}) {

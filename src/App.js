@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {Navigate, Route, Routes} from "react-router-dom";
+import { Route, Routes} from "react-router-dom";
 import Catalogpage from "./pages/Catalogpage/Catalogpage";
 import Registerpage from "./pages/Registerpage/Registerpage";
 import Signinpage from "./pages/Signinpage/Signinpage";
@@ -12,10 +12,12 @@ import RequireAuth from './hoc/RequireAuth';
 function App() {
   const [menu, setMenu] = useState([]);
 
+  async function getMenu() {await fetch("http://localhost:8000/menu")
+                          .then(res => res.json())
+                          .then(data => setMenu(data));}
+
   useEffect(()=>{
-    fetch("http://localhost:8000/menu")
-        .then(res => res.json())
-        .then(data => setMenu(data))
+    getMenu();
   }, [])
 
 
