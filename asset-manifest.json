@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/MariaSSch/foodDeliveryDeploy/static/css/main.0e7cb7a2.css",
-    "main.js": "/MariaSSch/foodDeliveryDeploy/static/js/main.66f93a47.js",
-    "static/media/page_bg.png": "/MariaSSch/foodDeliveryDeploy/static/media/page_bg.d05635d1f8211c9e797b.png",
-    "static/media/cart.svg": "/MariaSSch/foodDeliveryDeploy/static/media/cart.d59b532d32127301a1b8255199fa4c3f.svg",
-    "static/media/x-cross.svg": "/MariaSSch/foodDeliveryDeploy/static/media/x-cross.0c9652ced010d641065fccf9d1090d23.svg",
-    "index.html": "/MariaSSch/foodDeliveryDeploy/index.html",
-    "static/media/backarrow.svg": "/MariaSSch/foodDeliveryDeploy/static/media/backarrow.1b0c88c06c8aef9cb15114f0a8011241.svg",
-    "static/media/cross.svg": "/MariaSSch/foodDeliveryDeploy/static/media/cross.8a2bb1dfe91248296a8e2dcc0a3bdc2b.svg",
-    "main.0e7cb7a2.css.map": "/MariaSSch/foodDeliveryDeploy/static/css/main.0e7cb7a2.css.map",
-    "main.66f93a47.js.map": "/MariaSSch/foodDeliveryDeploy/static/js/main.66f93a47.js.map"
+    "main.css": "/FoodDelivery/static/css/main.e102220a.css",
+    "main.js": "/FoodDelivery/static/js/main.ca3d204f.js",
+    "static/media/page_bg.png": "/FoodDelivery/static/media/page_bg.d05635d1f8211c9e797b.png",
+    "static/media/cart.svg": "/FoodDelivery/static/media/cart.d59b532d32127301a1b8255199fa4c3f.svg",
+    "static/media/x-cross.svg": "/FoodDelivery/static/media/x-cross.0c9652ced010d641065fccf9d1090d23.svg",
+    "static/media/backarrow.svg": "/FoodDelivery/static/media/backarrow.1b0c88c06c8aef9cb15114f0a8011241.svg",
+    "index.html": "/FoodDelivery/index.html",
+    "static/media/cross.svg": "/FoodDelivery/static/media/cross.8a2bb1dfe91248296a8e2dcc0a3bdc2b.svg",
+    "main.e102220a.css.map": "/FoodDelivery/static/css/main.e102220a.css.map",
+    "main.ca3d204f.js.map": "/FoodDelivery/static/js/main.ca3d204f.js.map"
   },
   "entrypoints": [
-    "static/css/main.0e7cb7a2.css",
-    "static/js/main.66f93a47.js"
+    "static/css/main.e102220a.css",
+    "static/js/main.ca3d204f.js"
   ]
 }
