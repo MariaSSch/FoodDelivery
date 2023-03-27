@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/MariaSSch/foodDeliveryDeploy/static/css/main.0e7cb7a2.css",
-    "main.js": "/MariaSSch/foodDeliveryDeploy/static/js/main.51843f60.js",
+    "main.js": "/MariaSSch/foodDeliveryDeploy/static/js/main.66f93a47.js",
     "static/media/page_bg.png": "/MariaSSch/foodDeliveryDeploy/static/media/page_bg.d05635d1f8211c9e797b.png",
     "static/media/cart.svg": "/MariaSSch/foodDeliveryDeploy/static/media/cart.d59b532d32127301a1b8255199fa4c3f.svg",
     "static/media/x-cross.svg": "/MariaSSch/foodDeliveryDeploy/static/media/x-cross.0c9652ced010d641065fccf9d1090d23.svg",
@@ -9,10 +9,10 @@
     "static/media/backarrow.svg": "/MariaSSch/foodDeliveryDeploy/static/media/backarrow.1b0c88c06c8aef9cb15114f0a8011241.svg",
     "static/media/cross.svg": "/MariaSSch/foodDeliveryDeploy/static/media/cross.8a2bb1dfe91248296a8e2dcc0a3bdc2b.svg",
     "main.0e7cb7a2.css.map": "/MariaSSch/foodDeliveryDeploy/static/css/main.0e7cb7a2.css.map",
-    "main.51843f60.js.map": "/MariaSSch/foodDeliveryDeploy/static/js/main.51843f60.js.map"
+    "main.66f93a47.js.map": "/MariaSSch/foodDeliveryDeploy/static/js/main.66f93a47.js.map"
   },
   "entrypoints": [
     "static/css/main.0e7cb7a2.css",
-    "static/js/main.51843f60.js"
+    "static/js/main.66f93a47.js"
   ]
 }
