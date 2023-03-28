@@ -34,16 +34,16 @@ function App() {
   return (
       <div className="App">
         <Routes>
-          <Route path="/app/signin" element={<Signinpage/>}/>
-          <Route path="/app/register" element={<Registerpage/>}/>
-          <Route path="/app/aware" element={<Awarepage/>} />
-          <Route index path="/app"  element={<Catalogpage menu={menu}/>} />
+          <Route path="/signin" element={<Signinpage/>}/>
+          <Route path="/register" element={<Registerpage/>}/>
+          <Route path="/aware" element={<Awarepage/>} />
+          <Route index path="/"  element={<Catalogpage menu={menu}/>} />
                                                
-          <Route path="/app/cart" element={
+          <Route path="/cart" element={
                               <RequireAuth>
                                 {<Cartpage/>}
                               </RequireAuth>     }/>
-          <Route path="/app/:id" element={<SingleProdpage/> }/>
+          <Route path="/:id" element={<SingleProdpage/> }/>
         </Routes>
       </div>
   );

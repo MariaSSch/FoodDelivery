@@ -9,8 +9,8 @@ export default function Awarepage() {
             Необходимо авторизоваться или зарегистрироваться
         </h1>
         <div className={s.links}>
-            <Link to="/app/signin">Авторизоваться</Link>
-            <Link to="/app/register">Зарегистрироваться</Link>
+            <Link to="/signin">Авторизоваться</Link>
+            <Link to="/register">Зарегистрироваться</Link>
         </div>
     </div>
   )

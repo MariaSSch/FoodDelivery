@@ -9,7 +9,7 @@ export default function Cart() {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/app/cart");
+    navigate("/cart");
   }
   
   const {prodsCounter, subtotal} = useSelector(({cart}) => ({

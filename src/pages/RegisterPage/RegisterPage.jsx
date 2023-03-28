@@ -32,7 +32,7 @@ export default function Registerpage() {
     // setModal(true);
     // setModalChild("Вы зарегистрированы!")
     dispatch(setUser());
-    navigate("/app");
+    navigate("/");
     }
   }
 

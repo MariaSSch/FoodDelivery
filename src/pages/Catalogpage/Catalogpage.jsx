@@ -10,12 +10,12 @@ import s from "./Catalogpage.module.sass";
 export default function Catalogpage({menu}) {
   
   const [searchParams, setSearchParams] = useSearchParams();
-  const prodChoice = searchParams.get("app") || "";
+  const prodChoice = searchParams.get("/") || "";
   const navigate = useNavigate();
 
   const handleSelect = () => {
     const choice = document.querySelector("select").value;
-    setSearchParams({app: choice})
+    setSearchParams({"/": choice})
   }
 
   const handleClick = (prod) => {

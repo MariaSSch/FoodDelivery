@@ -54,7 +54,7 @@ const showError = (input) => {
 }
   return (
     <div className={s.form}>
-        <Link className={s.formLink} to={`/app/${link}`}>{actionToDo}</Link>
+        <Link className={s.formLink} to={`/${link}`}>{actionToDo}</Link>
         <h1>{actionType}</h1>
         <form noValidate 
               action='#' 

@@ -9,7 +9,7 @@ export default function RequireAuth({children}) {
     const isAuth = useSelector(state => state.auth.isAuth);
 
     if(!isAuth) {
-        return <Navigate to="/app/aware" state={{from: location}} />
+        return <Navigate to="/aware" state={{from: location}} />
     }
   return children;
 }
