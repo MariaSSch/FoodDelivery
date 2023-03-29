@@ -16,10 +16,14 @@ export default function Form({onSubmitAction, link, actionType, actionToDo, acti
 
   const inputLogin = document.querySelector("input#login");
   const inputPassword = document.querySelector("input#password");
+
+  //let loginRef = useRef()
+  //let passwordRef = useRef()
   
   
   const handleLoginValidation = () => {
     if(inputLogin.validity.valid && inputPassword.validity.valid){
+      //inputref.current.validity
       setIsValid(true);
       setLoginError("")
     } else {

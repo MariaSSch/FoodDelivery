@@ -1,7 +1,6 @@
 import React from 'react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { Outlet, useSearchParams } from 'react-router-dom';
 import GetoutButton from '../../UI/GetoutButton/GetoutButton';
-import Card from '../../components/Card/Card';
 import Cart from '../../components/Cart/Cart';
 import ChooseCategory from '../../components/ChooseCategory/ChooseCategory';
 
@@ -11,16 +10,13 @@ export default function Catalogpage({menu}) {
   
   const [searchParams, setSearchParams] = useSearchParams();
   const prodChoice = searchParams.get("/") || "";
-  const navigate = useNavigate();
 
   const handleSelect = () => {
     const choice = document.querySelector("select").value;
     setSearchParams({"/": choice})
   }
 
-  const handleClick = (prod) => {
-    navigate(`${prod.id}`)
-}
+
 
 
   return (
@@ -34,7 +30,7 @@ export default function Catalogpage({menu}) {
       </div>
       <ChooseCategory handleSelect={handleSelect}/>
       <div className={s.catalogpageCardsContainer}>
-      {
+      {/* {
       menu && menu.filter(prod => {
         if(prodChoice === "none" || prodChoice === "") {return menu} 
         else {return prod.category === prodChoice} 
@@ -45,10 +41,9 @@ export default function Catalogpage({menu}) {
                 handleClick={()=>handleClick(prod)}
                 />
       })
-      }
+      } */}
+      <Outlet context={{prodChoice}}/>
       </div>
-      <div>left</div>
-      <div>right</div>
     </div>
   ) 
  

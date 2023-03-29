@@ -1,10 +1,21 @@
 @import "../../assets/styles"
+.catalog
+        .catalogContainer
+                width: 100%
+                display: grid
+                grid-template-columns: repeat(auto-fill, minmax(250px, 312px))
+                grid-template-rows: min-content
+                row-gap: 35px
+                column-gap: 18px
+                justify-content: center
+                justify-items: center
+        .catalogPages
+                width: 100%
+                display: flex
+                justify-content: center
+                margin-top: 20px
 
-.catalogContainer
-        display: grid
-        grid-template-columns: repeat(auto-fill, minmax(250px, 312px))
-        grid-template-rows: min-content
-        row-gap: 35px
-        column-gap: 18px
-        justify-content: center
-        justify-items: center
+                p
+                        color: $accent-color
+                        margin: 10px
+                        cursor: pointer

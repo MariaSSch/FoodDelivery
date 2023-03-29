@@ -8,6 +8,7 @@ import './App.sass';
 import SingleProdpage from "./pages/SingleProdpage/SingleProdpage";
 import Awarepage from './pages/Awarepage/Awarepage';
 import RequireAuth from './hoc/RequireAuth';
+import Catalog from './components/Catalog/Catalog';
 
 function App() {
   const [menu, setMenu] = useState([]);
@@ -36,9 +37,10 @@ function App() {
         <Routes>
           <Route path="/signin" element={<Signinpage/>}/>
           <Route path="/register" element={<Registerpage/>}/>
-          <Route path="/aware" element={<Awarepage/>} />
-          <Route index path="/"  element={<Catalogpage menu={menu}/>} />
-                                               
+          <Route path="/"  element={<Catalogpage menu={menu} />} >
+                    <Route index path="catalog" element={<Catalog menu={menu}/> }/>                           
+                    <Route path="aware" element={<Awarepage/>} />
+          </Route>
           <Route path="/cart" element={
                               <RequireAuth>
                                 {<Cartpage/>}
