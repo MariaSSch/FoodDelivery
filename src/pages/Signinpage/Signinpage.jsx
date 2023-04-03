@@ -21,7 +21,7 @@ export default function Signinpage() {
     }
     if(registeredUsers.some(elem => currentUser.login === elem.login && currentUser.password === elem.password)) {
       dispatch(setUser());
-      navigate("/");
+      navigate("/catalog");
 
     } else {
       setSubmitError("Логин или пароль неверен");

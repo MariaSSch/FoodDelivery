@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Outlet, useSearchParams } from 'react-router-dom';
 import GetoutButton from '../../UI/GetoutButton/GetoutButton';
 import Cart from '../../components/Cart/Cart';
@@ -9,13 +9,14 @@ import s from "./Catalogpage.module.sass";
 export default function Catalogpage({menu}) {
   
   const [searchParams, setSearchParams] = useSearchParams();
-  const prodChoice = searchParams.get("/") || "";
+  const prodChoice = searchParams.get("/catalog") || "";
 
-  const handleSelect = () => {
-    const choice = document.querySelector("select").value;
-    setSearchParams({"/": choice})
+  const [choice, setChoice] = useState("none");
+  const handleSelect = (e) => {
+    const choice = e.target.value
+    setSearchParams({"/catalog": choice});
+    setChoice(choice);
   }
-
 
 
 
@@ -28,7 +29,7 @@ export default function Catalogpage({menu}) {
           <GetoutButton />
         </div>
       </div>
-      <ChooseCategory handleSelect={handleSelect}/>
+      <ChooseCategory handleSelect={handleSelect} value={choice}/>
       <div className={s.catalogpageCardsContainer}>
       {/* {
       menu && menu.filter(prod => {

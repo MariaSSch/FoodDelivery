@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../../UI/Button/Button';
 
@@ -14,30 +14,26 @@ export default function Form({onSubmitAction, link, actionType, actionToDo, acti
  
   const [isValid, setIsValid] = useState(false);
 
-  const inputLogin = document.querySelector("input#login");
-  const inputPassword = document.querySelector("input#password");
-
-  //let loginRef = useRef()
-  //let passwordRef = useRef()
+  const loginRef = useRef();
+  const passwordRef = useRef();
   
   
   const handleLoginValidation = () => {
-    if(inputLogin.validity.valid && inputPassword.validity.valid){
-      //inputref.current.validity
+    if(loginRef.current.validity.valid && passwordRef.current.validity.valid){
       setIsValid(true);
       setLoginError("")
     } else {
-      setLoginError(showError(inputLogin));
+      setLoginError(showError(loginRef.current));
       setIsValid(false);
     }
 }
 const handlePasswordValidation = () => {
-  if(inputLogin.validity.valid && inputPassword.validity.valid) {
+  if(loginRef.current.validity.valid && passwordRef.current.validity.valid) {
     setIsValid(true);
     setPasswordError("")
 
   } else {
-    setPasswordError(showError(inputPassword));
+    setPasswordError(showError(passwordRef.current));
     setIsValid(false);
   }
 }
@@ -49,7 +45,7 @@ const showError = (input) => {
     return "Поле должно содержать не менее 4-х символов";
    } 
    else if(input.validity.patternMismatch){
-    if(input===inputLogin) {
+    if(input===loginRef) {
       return "Логин может содержать латинские буквы и цифры 0-9"
     } else {return "Пароль должен содержать большие и маленькие латинские буквы, спецсиволы и цифры 0-9"}
         
@@ -73,6 +69,7 @@ const showError = (input) => {
                     pattern="^[a-zA-Z0-9]{4,20}$"
                     name="login"
                     value={login}
+                    ref={loginRef}
                     onChange={e=> setLogin(e.target.value)}
                     onInput={handleLoginValidation}
                     />
@@ -84,6 +81,7 @@ const showError = (input) => {
                     maxLength={20}
                     pattern="(?=^.{4,20}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
                     name="password"
+                    ref={passwordRef}
                     onChange={e=>setPassword(e.target.value)}
                     value={password}
                     onInput={handlePasswordValidation}
