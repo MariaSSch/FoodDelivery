@@ -38,14 +38,14 @@ function App() {
           <Route path="/signin" element={<Signinpage/>}/>
           <Route path="/register" element={<Registerpage/>}/>
           <Route path="/"  element={<Catalogpage />} >
-                    <Route index path="catalog" element={<Catalog menu={menu}/> }/>                           
+                    <Route index element={<Catalog menu={menu}/> }/>                           
                     <Route path="aware" element={<Awarepage/>} />
           </Route>
           <Route path="/cart" element={
                               <RequireAuth>
                                 {<Cartpage/>}
                               </RequireAuth>     }/>
-          <Route path="/:id" element={<SingleProdpage/> }/>
+          <Route path="/catalog/:id" element={<SingleProdpage/> }/>
         </Routes>
       </div>
   );
