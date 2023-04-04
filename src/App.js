@@ -37,7 +37,7 @@ function App() {
         <Routes>
           <Route path="/signin" element={<Signinpage/>}/>
           <Route path="/register" element={<Registerpage/>}/>
-          <Route path="/"  element={<Catalogpage menu={menu} />} >
+          <Route path="/"  element={<Catalogpage />} >
                     <Route index path="catalog" element={<Catalog menu={menu}/> }/>                           
                     <Route path="aware" element={<Awarepage/>} />
           </Route>
