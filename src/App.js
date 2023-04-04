@@ -45,7 +45,7 @@ function App() {
                               <RequireAuth>
                                 {<Cartpage/>}
                               </RequireAuth>     }/>
-          <Route path="/catalog/:id" element={<SingleProdpage/> }/>
+          <Route path="/:id" element={<SingleProdpage/> }/>
         </Routes>
       </div>
   );
