@@ -6,16 +6,16 @@ import ChooseCategory from '../../components/ChooseCategory/ChooseCategory';
 
 import s from "./Catalogpage.module.sass";
 
-export default function Catalogpage({menu}) {
+export default function Catalogpage() {
   
   const [searchParams, setSearchParams] = useSearchParams();
   const prodChoice = searchParams.get("/catalog") || "";
 
-  const [choice, setChoice] = useState("none");
+  const [choiceValue, setChoiceValue] = useState("none");
   const handleSelect = (e) => {
     const choice = e.target.value
     setSearchParams({"/catalog": choice});
-    setChoice(choice);
+    setChoiceValue(choice);
   }
 
 
@@ -29,7 +29,7 @@ export default function Catalogpage({menu}) {
           <GetoutButton />
         </div>
       </div>
-      <ChooseCategory handleSelect={handleSelect} value={choice}/>
+      <ChooseCategory handleSelect={handleSelect} value={choiceValue}/>
       <div className={s.catalogpageCardsContainer}>
       {/* {
       menu && menu.filter(prod => {
